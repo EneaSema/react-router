@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+}
+
+.container {
+  max-width: 800px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-1-5 {
+  width: calc(100% / 5);
+}
+
+h1,
+h3,
+.btn {
+  margin: 0.5rem 0;
+}
+.form-post {
+  display: flex;
+  flex-direction: column;
+}
