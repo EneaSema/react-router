@@ -18,9 +18,9 @@ export default function PostsList() {
           {posts.map((post) => {
             return (
               <div className="col-4">
-                <div className="card">
+                <div key={post.id} className="card">
                   <div className="card-title">
-                    <h2>{post.title}</h2>
+                    <h2 className="title mx-3 my-3">{post.title}</h2>
                   </div>
                   <div className="card-body">
                     <p>{post.text}</p>
@@ -30,11 +30,15 @@ export default function PostsList() {
                         alt={post.title}
                       />
                     </figure>
-                    <ul>
-                      {post.tags.map((tag) => {
-                        return <li>{tag}</li>;
-                      })}
-                    </ul>
+
+                    <button
+                      onClick={(e) => {
+                        return e.target.value;
+                      }}
+                      className="btn btn-primary"
+                    >
+                      Scopri di più
+                    </button>
                   </div>
                 </div>
               </div>
