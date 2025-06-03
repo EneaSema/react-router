@@ -1,3 +1,7 @@
-export default function PostsList() {
-  return <h1>AboutUs</h1>;
+export default function AboutUs() {
+  return (
+    <>
+      <h1>About Us</h1>;
+    </>
+  );
 }

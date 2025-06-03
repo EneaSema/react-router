@@ -12,7 +12,7 @@ function App() {
         <Route element={<DefaultLayout />}>
           <Route path="/" element={<Homepage />}></Route>
 
-          <Route path="/postslist" element={<PostsListPage />}></Route>
+          <Route path="/postslist" element={<PostsListPage />} />
 
           <Route path="/aboutus" element={<AboutUsPage />} />
         </Route>
