@@ -5,7 +5,6 @@ import DefaultLayout from "./assets/layouts/DefaultLayout";
 import Homepage from "./assets/pages/Homepage";
 
 import PostsListPage from "./assets/pages/PostsListPage";
-import PostDettailsPage from "./assets/pages/PostDettailsPage";
 
 import AboutUsPage from "./assets/pages/AboutUsPage";
 
@@ -19,8 +18,7 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/aboutus" element={<AboutUsPage />} />
 
-          <Route path="/postslist" element={<PostsListPage />} />
-          <Route path="/postslist/posts/:id" element={<PostDettailsPage />} />
+          <Route path="/posts" element={<PostsListPage />} />
 
           <Route path="*" element={<NotFoundPage />} />
         </Route>
