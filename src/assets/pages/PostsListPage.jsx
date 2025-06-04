@@ -28,16 +28,13 @@ export default function PostsListPage() {
                   <h2 className="title mx-3 my-3">{post.title}</h2>
                 </div>
                 <div className="card-body">
-                  <p>{posts.text}</p>
                   <figure>
                     <img
                       src={`http://localhost:3000/${post.img}`}
                       alt={post.title}
                     />
                   </figure>
-                  <ul>
-                    <li>{post.tags}</li>
-                  </ul>
+                  <p>{post.text}</p>
                 </div>
 
                 <Link className="btn btn-primary" to={`/posts/${post.id}`}>
