@@ -1,10 +1,11 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
 
-import PostsList from "../componets/PostsList";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function PostsListPage() {
   const [posts, setPosts] = useState([]);
+
   useEffect(() => {
     axios
       .get("http://localhost:3000/posts")
@@ -16,11 +17,37 @@ export default function PostsListPage() {
         console.error(err);
       });
   }, []);
-
   return (
-    <>
-      <h1 className="title text-center mx-3 my-3">Posts List</h1>
-      <PostsList posts={posts} />
-    </>
+    <div className="container">
+      <div className="row">
+        {posts.map((post) => {
+          return (
+            <div className="col-4 g-2">
+              <div className="card h-100">
+                <div className="card-title">
+                  <h2 className="title mx-3 my-3">{post.title}</h2>
+                </div>
+                <div className="card-body">
+                  <p>{posts.text}</p>
+                  <figure>
+                    <img
+                      src={`http://localhost:3000/${post.img}`}
+                      alt={post.title}
+                    />
+                  </figure>
+                  <ul>
+                    <li>{post.tags}</li>
+                  </ul>
+                </div>
+
+                <Link className="btn btn-primary" to={`/posts/${post.id}`}>
+                  Scopri di più
+                </Link>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
   );
 }
